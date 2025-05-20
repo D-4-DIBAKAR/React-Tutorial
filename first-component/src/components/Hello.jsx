@@ -8,7 +8,7 @@ export default function Hello() {
      // );
      return React.createElement(
           "div",
-          {},
+          { id: "hello", className: "demo" },//id:"hello" class => className
           React.createElement("h1", {}, "Hello Users")
      );
 }
