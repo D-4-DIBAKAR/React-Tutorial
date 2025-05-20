@@ -12,3 +12,6 @@ export default function Hello() {
           React.createElement("h1", {}, "Hello Users")
      );
 }
+
+//class -> className
+//for -> htmlFor

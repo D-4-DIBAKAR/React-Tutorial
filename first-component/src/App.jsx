@@ -8,9 +8,11 @@ function App() {
 
   return (
     <>
-      {/* <Greet />
-      <Welcome /> */}
-      <Hello />
+      <Greet name={"Ram"} />
+      <Greet name={"Krishna"} />
+      <Greet name={"Bheem"} />
+      {/* <Welcome />
+      <Hello /> */}
     </>
   )
 }
