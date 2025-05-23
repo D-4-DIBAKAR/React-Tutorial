@@ -1,15 +1,16 @@
 import './App.css'
-import Greet from './components/Greet'
-import Hello from './components/Hello'
-import Message from './components/Message'
-import Welcome from './components/Welcome'
+import Counter from './components/Counter'
+// import Greet from './components/Greet'
+// import Hello from './components/Hello'
+// import Message from './components/Message'
+// import Welcome from './components/Welcome'
 
 function App() {
 
 
   return (
     <>
-      <Message />
+      {/* <Message /> */}
       {/* <Greet name={"Ram"} >
         <p>This is children props</p>
       </Greet>
@@ -19,6 +20,8 @@ function App() {
       <Greet name={"Bheem"} /> */}
       {/* <Welcome />
       <Hello /> */}
+
+      <Counter />
     </>
   )
 }
