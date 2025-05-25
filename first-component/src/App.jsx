@@ -4,6 +4,7 @@ import Counter from './components/Counter'
 import EventBind from './components/EventBind'
 import FunctionClick from './components/FunctionClick'
 import Greet from './components/Greet'
+import ParentComponent from './components/ParentComponent'
 // import Hello from './components/Hello'
 // import Message from './components/Message'
 // import Welcome from './components/Welcome'
@@ -13,8 +14,10 @@ function App() {
 
   return (
     <>
+      {/*Method as Props  */}
+      <ParentComponent />
       {/* Event Binding  */}
-      <EventBind />
+      {/* <EventBind /> */}
       {/* Event Handling */}
       {/* <FunctionClick />
       <ClassClick /> */}
