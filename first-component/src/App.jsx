@@ -4,6 +4,7 @@ import Counter from './components/Counter'
 import EventBind from './components/EventBind'
 import FunctionClick from './components/FunctionClick'
 import Greet from './components/Greet'
+import NameList from './components/NameList'
 import ParentComponent from './components/ParentComponent'
 import UserGreeting from './components/UserGreeting'
 // import Hello from './components/Hello'
@@ -15,8 +16,10 @@ function App() {
 
   return (
     <>
+      {/*Rendering List  */}
+      <NameList />
       {/*Conditional Rendering  */}
-      <UserGreeting />
+      {/* <UserGreeting /> */}
       {/*Method as Props  */}
       {/* <ParentComponent /> */}
       {/* Event Binding  */}
