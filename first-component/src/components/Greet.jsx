@@ -8,13 +8,14 @@ import React from 'react'
 //      )
 // }
 
-const Greet = ({ name }) => {
-     console.log({ props });
+const Greet = (props) => {//By destructuring props in function parameter { name, children }
+     // console.log({ props });
+     const { name, children } = props//Destructuring props in function body
 
      return (
           <>
                <h1>Hello {name}</h1>
-               {props.children}
+               {children}
           </>
      )
 }
