@@ -1,6 +1,8 @@
 import './App.css'
 import Form from './components/Form'
 import Inline from './components/Inline'
+import LifeCycleMountingA from './components/LifeCycleMountingA'
+import LifeCycleUpdatingA from './components/LifeCycleUpdatingA'
 // import ClassClick from './components/ClassClick'
 // import Counter from './components/Counter'
 // import EventBind from './components/EventBind'
@@ -20,8 +22,12 @@ function App() {
   return (
     <>
 
+      {/*Life Cycle : Mounting*/}
+      {/* <LifeCycleMountingA /> */}
+      {/*Life Cycle : Updating*/}
+      <LifeCycleUpdatingA />
       {/*Form Handling*/}
-      <Form />
+      {/* <Form /> */}
       {/*Styling*/}
       {/* <Stylesheet />
       <Inline /> */}
