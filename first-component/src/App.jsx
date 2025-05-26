@@ -1,4 +1,5 @@
 import './App.css'
+import Form from './components/Form'
 import Inline from './components/Inline'
 // import ClassClick from './components/ClassClick'
 // import Counter from './components/Counter'
@@ -19,9 +20,11 @@ function App() {
   return (
     <>
 
+      {/*Form Handling*/}
+      <Form />
       {/*Styling*/}
-      <Stylesheet />
-      <Inline />
+      {/* <Stylesheet />
+      <Inline /> */}
       {/*Rendering List  */}
       {/* <NameList /> */}
       {/*Conditional Rendering  */}
