@@ -1,5 +1,6 @@
 import './App.css'
 import Form from './components/Form'
+import Fragment from './components/Fragment'
 import Inline from './components/Inline'
 import LifeCycleMountingA from './components/LifeCycleMountingA'
 import LifeCycleUpdatingA from './components/LifeCycleUpdatingA'
@@ -22,10 +23,12 @@ function App() {
   return (
     <>
 
+      {/*Fragment*/}
+      <Fragment />
       {/*Life Cycle : Mounting*/}
       {/* <LifeCycleMountingA /> */}
       {/*Life Cycle : Updating*/}
-      <LifeCycleUpdatingA />
+      {/* <LifeCycleUpdatingA /> */}
       {/*Form Handling*/}
       {/* <Form /> */}
       {/*Styling*/}
