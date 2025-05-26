@@ -1,8 +1,9 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import RegularComponent from './RegularComponent'
 import PureComponentReact from './PureComponentReact'
+import MemoComponent from './MemoComponent'
 
-class ParentComp extends PureComponent {
+class ParentComp extends Component {
      /*************  ✨ Windsurf Command ⭐  *************/
      /**
       * Constructor for ParentComp class
@@ -30,6 +31,7 @@ class ParentComp extends PureComponent {
                <div>ParentComp
                     <RegularComponent name={this.state.name} />
                     <PureComponentReact name={this.state.name} />
+                    <MemoComponent name={this.state.name} />
                </div>
           )
      }
