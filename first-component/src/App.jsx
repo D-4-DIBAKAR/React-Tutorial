@@ -4,6 +4,7 @@ import Fragment from './components/Fragment'
 import Inline from './components/Inline'
 import LifeCycleMountingA from './components/LifeCycleMountingA'
 import LifeCycleUpdatingA from './components/LifeCycleUpdatingA'
+import ParentComp from './components/ParentComp'
 // import ClassClick from './components/ClassClick'
 // import Counter from './components/Counter'
 // import EventBind from './components/EventBind'
@@ -23,8 +24,10 @@ function App() {
   return (
     <>
 
+      {/*Pure Component*/}
+      <ParentComp />
       {/*Fragment*/}
-      <Fragment />
+      {/* <Fragment /> */}
       {/*Life Cycle : Mounting*/}
       {/* <LifeCycleMountingA /> */}
       {/*Life Cycle : Updating*/}
