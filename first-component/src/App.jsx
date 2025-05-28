@@ -1,6 +1,7 @@
 import './App.css'
+import PortalComponent from './components/PortalComponent'
 // import FocusInput from './components/FocusInput'
-import ForwardRefParentComp from './components/ForwardRefParentComp'
+// import ForwardRefParentComp from './components/ForwardRefParentComp'
 // import Form from './components/Form'
 // import Fragment from './components/Fragment'
 // import Inline from './components/Inline'
@@ -27,8 +28,10 @@ function App() {
   return (
     <>
 
+      {/*React Portal*/}
+      <PortalComponent />
       {/*Forwarding Ref Component*/}
-      <ForwardRefParentComp />
+      {/* <ForwardRefParentComp /> */}
       {/*Ref Component*/}
       {/* <FocusInput /> */}
       {/* <RefComponent /> */}
