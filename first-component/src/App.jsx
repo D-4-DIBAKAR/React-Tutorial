@@ -1,12 +1,13 @@
 import './App.css'
-import FocusInput from './components/FocusInput'
-import Form from './components/Form'
-import Fragment from './components/Fragment'
-import Inline from './components/Inline'
-import LifeCycleMountingA from './components/LifeCycleMountingA'
-import LifeCycleUpdatingA from './components/LifeCycleUpdatingA'
-import ParentComp from './components/ParentComp'
-import RefComponent from './components/RefComponent'
+// import FocusInput from './components/FocusInput'
+import ForwardRefParentComp from './components/ForwardRefParentComp'
+// import Form from './components/Form'
+// import Fragment from './components/Fragment'
+// import Inline from './components/Inline'
+// import LifeCycleMountingA from './components/LifeCycleMountingA'
+// import LifeCycleUpdatingA from './components/LifeCycleUpdatingA'
+// import ParentComp from './components/ParentComp'
+// import RefComponent from './components/RefComponent'
 // import ClassClick from './components/ClassClick'
 // import Counter from './components/Counter'
 // import EventBind from './components/EventBind'
@@ -26,8 +27,10 @@ function App() {
   return (
     <>
 
+      {/*Forwarding Ref Component*/}
+      <ForwardRefParentComp />
       {/*Ref Component*/}
-      <FocusInput />
+      {/* <FocusInput /> */}
       {/* <RefComponent /> */}
       {/*Pure Component*/}
       {/* <ParentComp /> */}

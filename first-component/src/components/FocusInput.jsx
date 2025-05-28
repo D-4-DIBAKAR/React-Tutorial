@@ -5,17 +5,17 @@ class FocusInput extends Component {
      constructor(props) {
           super(props)
 
-          this.ComponentRef = React.createRef();
+          this.componentRef = React.createRef();
           // Bind the clickHandler in the constructor
           this.clickHandler = this.clickHandler.bind(this);
      }
      clickHandler() {
-          this.ComponentRef.current.focusInput();
+          this.componentRef.current.focusInput();
      }
      render() {
           return (
                <div>
-                    <Input ref={this.ComponentRef} />
+                    <Input ref={this.componentRef} />
                     <button onClick={this.clickHandler} >Focus Input</button>
                </div>
           )
