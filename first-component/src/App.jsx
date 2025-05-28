@@ -1,4 +1,6 @@
 import './App.css'
+import ErrorBoundary from './components/ErrorBoundary'
+import Hero from './components/Hero'
 import PortalComponent from './components/PortalComponent'
 // import FocusInput from './components/FocusInput'
 // import ForwardRefParentComp from './components/ForwardRefParentComp'
@@ -28,8 +30,18 @@ function App() {
   return (
     <>
 
+      {/*React Error Boundary*/}
+      <ErrorBoundary>
+        <Hero name={"Batman"} />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Hero name={"Superman"} />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Hero name={"Joker"} />
+      </ErrorBoundary>
       {/*React Portal*/}
-      <PortalComponent />
+      {/* <PortalComponent /> */}
       {/*Forwarding Ref Component*/}
       {/* <ForwardRefParentComp /> */}
       {/*Ref Component*/}
