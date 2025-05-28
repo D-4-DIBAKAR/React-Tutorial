@@ -1,7 +1,9 @@
 import './App.css'
-import ErrorBoundary from './components/ErrorBoundary'
-import Hero from './components/Hero'
-import PortalComponent from './components/PortalComponent'
+import ClickCounter from './components/ClickCounter'
+import HoverCounter from './components/HoverCounter'
+// import ErrorBoundary from './components/ErrorBoundary'
+// import Hero from './components/Hero'
+// import PortalComponent from './components/PortalComponent'
 // import FocusInput from './components/FocusInput'
 // import ForwardRefParentComp from './components/ForwardRefParentComp'
 // import Form from './components/Form'
@@ -30,8 +32,11 @@ function App() {
   return (
     <>
 
+      {/*React Higher Order Component*/}
+      <ClickCounter name={"Rakesh"} />
+      <HoverCounter />
       {/*React Error Boundary*/}
-      <ErrorBoundary>
+      {/* <ErrorBoundary>
         <Hero name={"Batman"} />
       </ErrorBoundary>
       <ErrorBoundary>
@@ -39,7 +44,7 @@ function App() {
       </ErrorBoundary>
       <ErrorBoundary>
         <Hero name={"Joker"} />
-      </ErrorBoundary>
+      </ErrorBoundary> */}
       {/*React Portal*/}
       {/* <PortalComponent /> */}
       {/*Forwarding Ref Component*/}
