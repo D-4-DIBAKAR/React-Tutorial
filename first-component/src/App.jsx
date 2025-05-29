@@ -1,6 +1,10 @@
 import './App.css'
 import ClickCounter from './components/ClickCounter'
+import ClickCounterTwo from './components/ClickCounterTwo'
+import CounterCommon from './components/CounterCommon'
 import HoverCounter from './components/HoverCounter'
+import HoverCounterTwo from './components/HoverCounterTwo'
+import User from './components/User'
 // import ErrorBoundary from './components/ErrorBoundary'
 // import Hero from './components/Hero'
 // import PortalComponent from './components/PortalComponent'
@@ -32,9 +36,22 @@ function App() {
   return (
     <>
 
+      {/*Render Props Component*/}
+      {/* <ClickCounterTwo />
+      <HoverCounterTwo />
+      <User render={(isLoggedIn) => isLoggedIn ? 'Rahul' : 'Guest'} /> */}
+
+      <CounterCommon >{(count, incrementCount) => (<ClickCounterTwo count={count} incrementCount={incrementCount} />)}</CounterCommon>
+      <CounterCommon >
+        {(count, incrementCount) => (<HoverCounterTwo count={count} incrementCount={incrementCount} />)}
+      </CounterCommon>
+      {/* other way */}
+      {/* <CounterCommon render={(count, incrementCount) => <HoverCounterTwo count={count} incrementCount={incrementCount} />} /> */}
+
+
       {/*React Higher Order Component*/}
-      <ClickCounter name={"Rakesh"} />
-      <HoverCounter />
+      {/* <ClickCounter name={"Rakesh"} />
+      <HoverCounter /> */}
       {/*React Error Boundary*/}
       {/* <ErrorBoundary>
         <Hero name={"Batman"} />
