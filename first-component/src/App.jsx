@@ -1,10 +1,13 @@
 import './App.css'
 import ClickCounter from './components/ClickCounter'
 import ClickCounterTwo from './components/ClickCounterTwo'
+import ComponentC from './components/ComponentC'
 import CounterCommon from './components/CounterCommon'
 import HoverCounter from './components/HoverCounter'
 import HoverCounterTwo from './components/HoverCounterTwo'
 import User from './components/User'
+import UserContext from './components/userContext'
+// import { UserProvider } from './components/userContext'
 // import ErrorBoundary from './components/ErrorBoundary'
 // import Hero from './components/Hero'
 // import PortalComponent from './components/PortalComponent'
@@ -36,15 +39,19 @@ function App() {
   return (
     <>
 
+      {/*Context*/}
+      <UserContext.Provider value="Rahul">
+        <ComponentC />
+      </UserContext.Provider>
       {/*Render Props Component*/}
       {/* <ClickCounterTwo />
       <HoverCounterTwo />
       <User render={(isLoggedIn) => isLoggedIn ? 'Rahul' : 'Guest'} /> */}
 
-      <CounterCommon >{(count, incrementCount) => (<ClickCounterTwo count={count} incrementCount={incrementCount} />)}</CounterCommon>
+      {/* <CounterCommon >{(count, incrementCount) => (<ClickCounterTwo count={count} incrementCount={incrementCount} />)}</CounterCommon>
       <CounterCommon >
         {(count, incrementCount) => (<HoverCounterTwo count={count} incrementCount={incrementCount} />)}
-      </CounterCommon>
+      </CounterCommon> */}
       {/* other way */}
       {/* <CounterCommon render={(count, incrementCount) => <HoverCounterTwo count={count} incrementCount={incrementCount} />} /> */}
 
