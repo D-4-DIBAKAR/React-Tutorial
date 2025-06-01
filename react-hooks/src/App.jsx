@@ -1,4 +1,5 @@
 // import { useState } from 'react'
+import React from 'react'
 import './App.css'
 import ClassCounter from './components/ClassCounter'
 import ClassCounterOne from './components/ClassCounterOne'
@@ -13,7 +14,10 @@ import HookMouse from './components/HookMouse'
 import IntervalClassCounter from './components/IntervalClassCounter'
 import IntervalHookCounter from './components/IntervalHookCounter'
 import MouseContainer from './components/MouseContainer'
+import ComponentE from './components/ComponentE'
 
+export const UserContext = React.createContext();
+export const ChannelContext = React.createContext();
 function App() {
   // const [count, setCount] = useState(0)
 
@@ -35,7 +39,13 @@ function App() {
       {/* <MouseContainer /> */}
       {/* <IntervalClassCounter />
       <IntervalHookCounter /> */}
-      <DataFetching />
+      {/* <DataFetching /> */}
+      {/* useContext Hook */}
+      <UserContext.Provider value={'Vishal'}>
+        <ChannelContext.Provider value={'Codevolution'}>
+          <ComponentE />
+        </ChannelContext.Provider>
+      </UserContext.Provider>
     </>
   )
 }
