@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import React from 'react'
+import React, { useReducer, } from 'react'
 import './App.css'
 import ClassCounter from './components/ClassCounter'
 import ClassCounterOne from './components/ClassCounterOne'
@@ -15,11 +15,32 @@ import IntervalClassCounter from './components/IntervalClassCounter'
 import IntervalHookCounter from './components/IntervalHookCounter'
 import MouseContainer from './components/MouseContainer'
 import ComponentE from './components/ComponentE'
+import ReducerHookCounter from './components/ReducerHookCounter'
+import ReducerHookCounterOne from './components/ReducerHookCounterOne'
+import ReducerHookCounterTwo from './components/ReducerHookCounterTwo'
+import ComponentA from './components/ComponentA'
+import ComponentB from './components/ComponentB'
+import ComponentC from './components/ComponentC'
 
-export const UserContext = React.createContext();
-export const ChannelContext = React.createContext();
+// export const UserContext = React.createContext();
+// export const ChannelContext = React.createContext();
+const initialState = 0;
+const reducer = (state, action) => {
+  switch (action) {
+    case 'increment':
+      return state + 1;
+    case 'decrement':
+      return state - 1;
+    case 'reset':
+      return initialState;
+    default:
+      return state;
+  }
+}
+export const CountContext = React.createContext();
 function App() {
   // const [count, setCount] = useState(0)
+  const [count, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>
@@ -41,11 +62,21 @@ function App() {
       <IntervalHookCounter /> */}
       {/* <DataFetching /> */}
       {/* useContext Hook */}
-      <UserContext.Provider value={'Vishal'}>
+      {/* <UserContext.Provider value={'Vishal'}>
         <ChannelContext.Provider value={'Codevolution'}>
           <ComponentE />
         </ChannelContext.Provider>
-      </UserContext.Provider>
+      </UserContext.Provider> */}
+      {/* useReducer Hook */}
+      {/* <ReducerHookCounter /> */}
+      {/* <ReducerHookCounterOne /> */}
+      {/* <ReducerHookCounterTwo /> */}
+      <CountContext.Provider value={{ countState: count, countDispatch: dispatch }}>
+        Count : {count}
+        <ComponentA />
+        <ComponentB />
+        <ComponentC />
+      </CountContext.Provider>
     </>
   )
 }
