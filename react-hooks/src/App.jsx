@@ -21,6 +21,8 @@ import ReducerHookCounterTwo from './components/ReducerHookCounterTwo'
 import ComponentA from './components/ComponentA'
 import ComponentB from './components/ComponentB'
 import ComponentC from './components/ComponentC'
+import DataFetchingOne from './components/DataFetchingOne'
+import DataFetchingTwo from './components/DataFetchingTwo'
 
 // export const UserContext = React.createContext();
 // export const ChannelContext = React.createContext();
@@ -71,12 +73,14 @@ function App() {
       {/* <ReducerHookCounter /> */}
       {/* <ReducerHookCounterOne /> */}
       {/* <ReducerHookCounterTwo /> */}
-      <CountContext.Provider value={{ countState: count, countDispatch: dispatch }}>
+      {/* <CountContext.Provider value={{ countState: count, countDispatch: dispatch }}>
         Count : {count}
         <ComponentA />
         <ComponentB />
         <ComponentC />
-      </CountContext.Provider>
+      </CountContext.Provider> */}
+      {/* <DataFetchingOne /> */}
+      <DataFetchingTwo />
     </>
   )
 }
