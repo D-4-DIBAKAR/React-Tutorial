@@ -28,6 +28,11 @@ import Counter from './components/Counter'
 import FocusInput from './components/FocusInput'
 import ClassTimer from './components/ClassTimer'
 import HookTimer from './components/HookTimer'
+import DocumentTitleOne from './components/DocumentTitleOne'
+import DocumentTitleTwo from './components/DocumentTitleTwo'
+import CounterOne from './components/CounterOne'
+import CounterTwo from './components/CounterTwo'
+import UserForm from './components/UserForm'
 
 // export const UserContext = React.createContext();
 // export const ChannelContext = React.createContext();
@@ -93,7 +98,13 @@ function App() {
       {/* useRef Hook */}
       {/* <FocusInput /> */}
       {/* <ClassTimer /> */}
-      <HookTimer />
+      {/* <HookTimer /> */}
+      {/* Custom Hook */}
+      {/* <DocumentTitleOne /> */}
+      {/* <DocumentTitleTwo /> */}
+      {/* <CounterOne /> */}
+      {/* <CounterTwo /> */}
+      <UserForm />
     </>
   )
 }
