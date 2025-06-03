@@ -1,5 +1,5 @@
-// import { useState } from 'react'
-import React, { useReducer, } from 'react'
+// import { useState,useReducer } from 'react'
+import React from 'react'
 import './App.css'
 import ClassCounter from './components/ClassCounter'
 import ClassCounterOne from './components/ClassCounterOne'
@@ -25,26 +25,29 @@ import DataFetchingOne from './components/DataFetchingOne'
 import DataFetchingTwo from './components/DataFetchingTwo'
 import ParentComponent from './components/ParentComponent'
 import Counter from './components/Counter'
+import FocusInput from './components/FocusInput'
+import ClassTimer from './components/ClassTimer'
+import HookTimer from './components/HookTimer'
 
 // export const UserContext = React.createContext();
 // export const ChannelContext = React.createContext();
-const initialState = 0;
-const reducer = (state, action) => {
-  switch (action) {
-    case 'increment':
-      return state + 1;
-    case 'decrement':
-      return state - 1;
-    case 'reset':
-      return initialState;
-    default:
-      return state;
-  }
-}
+// const initialState = 0;
+// const reducer = (state, action) => {
+//   switch (action) {
+//     case 'increment':
+//       return state + 1;
+//     case 'decrement':
+//       return state - 1;
+//     case 'reset':
+//       return initialState;
+//     default:
+//       return state;
+//   }
+// }
 export const CountContext = React.createContext();
 function App() {
   // const [count, setCount] = useState(0)
-  const [count, dispatch] = useReducer(reducer, initialState);
+  // const [count, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>
@@ -86,7 +89,11 @@ function App() {
       {/* useCallback Hook */}
       {/* <ParentComponent /> */}
       {/* useMemo Hook */}
-      <Counter />
+      {/* <Counter /> */}
+      {/* useRef Hook */}
+      {/* <FocusInput /> */}
+      {/* <ClassTimer /> */}
+      <HookTimer />
     </>
   )
 }
