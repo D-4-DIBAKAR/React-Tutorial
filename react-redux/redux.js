@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import pkg from 'redux-logger'; // ESM-compatible import
+import pkg from 'redux-logger';
 const { createLogger } = pkg;   // Destructure createLogger
 //Node
 //const redux=require('redux');
