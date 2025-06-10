@@ -22,8 +22,23 @@ const onSubmit = (values) => {
 const validationSchema = Yup.object({
      name: Yup.string().required('Required!'),
      email: Yup.string().email('Invalid email format').required('Required!'),
-     channel: Yup.string().required('Required!')
+     channel: Yup.string().required('Required!'),
+     // comment: Yup.string().required('Required!'),
+     // address: Yup.string().required('Required!'),
+     // social: Yup.object({
+     //      facebook: Yup.string().required('Required!'),
+     //      twitter: Yup.string().required('Required!')
+     // }),
+     // phoneNumbers: Yup.array().of(Yup.string().required('Required!')),
+     // phNumbers: Yup.array().of(Yup.string().required('Required!'))
 })
+const validateComments = (value) => {
+     let error;
+     if (!value) {
+          error = 'Required'
+     }
+     return error
+}
 function YoutubeForm() {
 
      // console.log("Form Values : ", formik.values);
@@ -76,7 +91,8 @@ function YoutubeForm() {
                          <label htmlFor='comments'>
                               Comments
                          </label>
-                         <Field as='textarea' name="comments" id="comments" />
+                         <Field as='textarea' name="comments" id="comments" validate={validateComments} />
+                         <ErrorMessage name='comments' component='div' className='error' />
                          {/* as='textarea' or component='textarea' */}
                     </div>
                     <div className='form-control'>
