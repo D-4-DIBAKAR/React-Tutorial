@@ -52,6 +52,8 @@ function YoutubeForm() {
                onSubmit={onSubmit}
                validateOnChange={false}
                validateOnBlur={false}
+          // validateOnMount
+          //validateOnMount:Validate on initial render of form used for form validation when component mounts . it is suitable for simple forms
           >{formik => {
                console.log("Formik Values : ", formik);
 
@@ -154,14 +156,14 @@ function YoutubeForm() {
                                              const { push, remove, form } = fieldArrayProps
                                              const { values } = form
                                              const { phNumbers } = values
-                                             console.log("Form Errors : ", form.errors);
+                                             // console.log("Form Errors : ", form.errors);
                                              return (
                                                   <div>
                                                        {
                                                             phNumbers.map((phNumber, index) => (
                                                                  <div key={index}>
                                                                       <Field name={`phNumbers[${index}]`} />
-                                                                      {index > 0 && <button type='button' onClick={() => remove(index)}>_</button>}
+                                                                      {index > 0 && <button type='button' onClick={() => remove(index)}>-</button>}
                                                                  </div>
                                                             ))
                                                        }
@@ -181,7 +183,8 @@ function YoutubeForm() {
                               channel: true,
                               comments: true
                          })}>Visit All</button>
-                         <button type='submit'>Submit</button>
+                         {/* <button type='submit' disabled={!formik.isValid && !formik.dirty}>Submit</button> */}
+                         <button type='submit' disabled={!formik.isValid}>Submit</button>
                     </Form>
                )
           }}
