@@ -1,4 +1,4 @@
-import { useFormik } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik' //useFormik=>Formik
 import * as Yup from 'yup'//Yup is a validation library for formik
 const initialValues = {
      name: '',
@@ -17,34 +17,32 @@ const validationSchema = Yup.object({
 })
 function YoutubeForm() {
 
-     const formik = useFormik({
-          initialValues,
-          onSubmit,
-          // validate,
-          validationSchema
-     })
      // console.log("Form Values : ", formik.values);
      // console.log("Form Errors : ", formik.errors);
      // console.log("Visited Fields : ", formik.touched);//Touched Fields with handle blur
 
      return (
-          <div>
-               <form onSubmit={formik.handleSubmit}>
+          <Formik
+               initialValues={initialValues}
+               validationSchema={validationSchema}
+               onSubmit={onSubmit}
+          >
+               <Form>
                     <div className='form-control'>
 
                          <label htmlFor='name'>
                               Name
                          </label>
-                         <input type="text" name="name" id="name" {...formik.getFieldProps('name')} />
-                         {formik.touched.name && formik.errors.name ? <div className='error'>{formik.errors.name}</div> : null}
+                         <Field type="text" name="name" id="name" />
+                         <ErrorMessage name='name' component='div' className='error' />
                     </div>
                     <div className='form-control'>
 
                          <label htmlFor='email'>
                               E-mail
                          </label>
-                         <input type="email" name="email" id="email" {...formik.getFieldProps('email')} />
-                         {formik.touched.email && formik.errors.email ? <div className='error'>{formik.errors.email}</div > : null}
+                         <Field type="email" name="email" id="email" />
+                         <ErrorMessage name='email' component='div' className='error' />
                     </div>
                     <div className='form-control'>
 
@@ -52,13 +50,21 @@ function YoutubeForm() {
                     <label htmlFor='channel'>
                          Channel
                     </label>
-                    <input type="text" name="channel" id="channel" {...formik.getFieldProps('channel')} />
-                    {formik.touched.channel && formik.errors.channel ? <div className='error'>{formik.errors.channel}</div> : null}
+                    <Field type="text" name="channel" id="channel" />
+                    <ErrorMessage name='channel' component='div' className='error' />
                     <button type='submit'>Submit</button>
-               </form>
-          </div>
+               </Form>
+          </Formik>
      )
 }
 
 export default YoutubeForm
 
+/**
+ * Formik Component
+ * ----------------
+ * Formik : Manages the form state
+ * Form : Handles form submission
+ * Field : Handles input fields
+ * Error Message : Handles error messages
+ */
