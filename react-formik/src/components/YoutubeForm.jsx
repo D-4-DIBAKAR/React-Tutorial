@@ -1,9 +1,16 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik' //useFormik=>Formik
 import * as Yup from 'yup'//Yup is a validation library for formik
+import TextError from './TextError';
 const initialValues = {
      name: '',
      email: '',
-     channel: ''
+     channel: '',
+     address: '',
+     social: {
+          facebook: '',
+          twitter: ''
+     },
+     phoneNumbers: ['', ''],
      //This refers to name attributes in input field
 }
 const onSubmit = (values) => {
@@ -35,6 +42,14 @@ function YoutubeForm() {
                          </label>
                          <Field type="text" name="name" id="name" />
                          <ErrorMessage name='name' component='div' className='error' />
+                         {/* <ErrorMessage name='name'  >
+                              {
+                                   (errorMsg) => {
+                                        const { message } = errorMsg
+                                        return <div className='error'>{message}</div>
+                                   }
+                              }
+                         </ErrorMessage> */}
                     </div>
                     <div className='form-control'>
 
@@ -42,6 +57,7 @@ function YoutubeForm() {
                               E-mail
                          </label>
                          <Field type="email" name="email" id="email" />
+                         {/* <ErrorMessage name='email' component={TextError} className='error' /> */}
                          <ErrorMessage name='email' component='div' className='error' />
                     </div>
                     <div className='form-control'>
@@ -52,6 +68,55 @@ function YoutubeForm() {
                     </label>
                     <Field type="text" name="channel" id="channel" />
                     <ErrorMessage name='channel' component='div' className='error' />
+                    <div className='form-control'>
+                         <label htmlFor='comments'>
+                              Comments
+                         </label>
+                         <Field as='textarea' name="comments" id="comments" />
+                         {/* as='textarea' or component='textarea' */}
+                    </div>
+                    <div className='form-control'>
+                         <label htmlFor='address'>
+                              Address
+                         </label>
+                         <Field as='textarea' name="address" id="address" >
+                              {
+                                   (props) => {
+                                        const { field, form, meta } = props
+                                        return (
+                                             <div>
+                                                  <input {...field} type="text" name="address" id="address" />
+                                                  {meta.touched && meta.error ? <div className='error'>{meta.error}</div> : null}
+                                             </div>
+                                        )
+                                   }
+                              }
+                         </Field>
+                    </div>
+                    <div className='form-control'>
+                         <label htmlFor='facebook'>
+                              Facebook Profile
+                         </label>
+                         <Field type='text' name="social.facebook" id="facebook" />
+                    </div>
+                    <div className='form-control'>
+                         <label htmlFor='twitter'>
+                              Twitter Profile
+                         </label>
+                         <Field type='text' name="social.twitter" id="twitter" />
+                    </div>
+                    <div className='form-control'>
+                         <label htmlFor='primaryPhone'>
+                              Primary Phone
+                         </label>
+                         <Field type='text' name="phoneNumbers[0]" id="primaryPhone" />
+                    </div>
+                    <div className='form-control'>
+                         <label htmlFor='secondaryPhone'>
+                              Secondary Phone
+                         </label>
+                         <Field type='text' name="phoneNumbers[1]" id="secondaryPhone" />
+                    </div>
                     <button type='submit'>Submit</button>
                </Form>
           </Formik>
