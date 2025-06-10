@@ -1,4 +1,5 @@
-import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik' //useFormik=>Formik
+import { Formik, Form, Field, ErrorMessage, FieldArray, FastField } from 'formik'
+//useFormik=>Formik
 import * as Yup from 'yup'//Yup is a validation library for formik
 import TextError from './TextError';
 const initialValues = {
@@ -34,6 +35,8 @@ function YoutubeForm() {
                initialValues={initialValues}
                validationSchema={validationSchema}
                onSubmit={onSubmit}
+               validateOnChange={false}
+               validateOnBlur={false}
           >
                <Form>
                     <div className='form-control'>
@@ -80,10 +83,13 @@ function YoutubeForm() {
                          <label htmlFor='address'>
                               Address
                          </label>
-                         <Field as='textarea' name="address" id="address" >
+                         <FastField name="address" id="address" >
                               {
                                    (props) => {
+                                        console.log("Field Props : ");
                                         const { field, form, meta } = props
+
+
                                         return (
                                              <div>
                                                   <input {...field} type="text" name="address" id="address" />
@@ -92,7 +98,7 @@ function YoutubeForm() {
                                         )
                                    }
                               }
-                         </Field>
+                         </FastField>
                     </div>
                     <div className='form-control'>
                          <label htmlFor='facebook'>
@@ -128,6 +134,7 @@ function YoutubeForm() {
                                         const { push, remove, form } = fieldArrayProps
                                         const { values } = form
                                         const { phNumbers } = values
+                                        console.log("Form Errors : ", form.errors);
                                         return (
                                              <div>
                                                   {
