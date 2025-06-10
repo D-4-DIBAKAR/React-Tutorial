@@ -10,7 +10,7 @@ function UserView() {
 
      useEffect(() => {
           dispatch(fetchUsers());
-     }, [dispatch]);  // dependency array to run once
+     }, [dispatch]);  
 
      return (
           <div>
