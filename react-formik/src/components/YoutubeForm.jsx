@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik' //useFormik=>Formik
+import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik' //useFormik=>Formik
 import * as Yup from 'yup'//Yup is a validation library for formik
 import TextError from './TextError';
 const initialValues = {
@@ -11,6 +11,7 @@ const initialValues = {
           twitter: ''
      },
      phoneNumbers: ['', ''],
+     phNumbers: ['']
      //This refers to name attributes in input field
 }
 const onSubmit = (values) => {
@@ -116,6 +117,33 @@ function YoutubeForm() {
                               Secondary Phone
                          </label>
                          <Field type='text' name="phoneNumbers[1]" id="secondaryPhone" />
+                    </div>
+                    <div className='form-control'>
+                         <label htmlFor='phNumbers'>
+                              List of Phone Numbers
+                         </label>
+                         <FieldArray name="phNumbers" id="phNumbers" >
+                              {
+                                   (fieldArrayProps) => {
+                                        const { push, remove, form } = fieldArrayProps
+                                        const { values } = form
+                                        const { phNumbers } = values
+                                        return (
+                                             <div>
+                                                  {
+                                                       phNumbers.map((phNumber, index) => (
+                                                            <div key={index}>
+                                                                 <Field name={`phNumbers[${index}]`} />
+                                                                 {index > 0 && <button type='button' onClick={() => remove(index)}>_</button>}
+                                                            </div>
+                                                       ))
+                                                  }
+                                                  <button type='button' onClick={() => push('')}>+</button>
+                                             </div>
+                                        )
+                                   }
+                              }
+                         </FieldArray>
                     </div>
                     <button type='submit'>Submit</button>
                </Form>
