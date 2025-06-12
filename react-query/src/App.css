@@ -6,6 +6,10 @@ nav ul {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+a {
+  display: block;
+}
+
 nav ul li {
   list-style-type: none;
   margin-right: 16px;

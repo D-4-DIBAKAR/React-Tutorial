@@ -13,11 +13,11 @@ export const useSuperHerosData = (onSuccess, onError) => {
           // enabled: false //default is true used for disable the query on mount , now we can use button to trigger the query
           onSuccess,
           onError,
-          select: (data) => {
-               console.log('perform side effect after data fetching', data);
-               const superHeroNames = data.data.map(hero => hero.name)
-               return superHeroNames
-               // return data.data
-          }
+          // select: (data) => {
+          //      console.log('perform side effect after data fetching', data);
+          //      const superHeroNames = data.data.map(hero => hero.name)
+          //      return superHeroNames
+          //      // return data.data
+          // }
      })
 }
