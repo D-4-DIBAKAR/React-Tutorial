@@ -7,6 +7,11 @@ export function RQSuperHeroesPage() {
      const { isLoading, error, data, isError, isFetching } = useQuery('super-heroes', fetchSuperHeroes, {
           // cacheTime: 5000,
           // staleTime: 30000, //default is 0,
+          // refetchOnMount: false,//default is true, or another value can be passed 'always',
+          // refetchOnReconnect: false,//default is true, or another value can be passed 'always',
+          // refetchOnWindowFocus: false, //default is true, or another value can be passed 'always',
+          // refetchInterval: 1000,//default is 0, or another value can be passed 'always'
+
 
 
      })
