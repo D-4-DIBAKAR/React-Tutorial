@@ -20,7 +20,13 @@ export function RQSuperHeroesPage() {
           // refetchIntervalInBackground: false, //default is false, or another value can be passed in miliseconds //it continue fetching data when window is not in focus,
           // enabled: false //default is true used for disable the query on mount , now we can use button to trigger the query
           onSuccess,
-          onError
+          onError,
+          select: (data) => {
+               console.log('perform side effect after data fetching', data);
+               const superHeroNames = data.data.map(hero => hero.name)
+               return superHeroNames
+               // return data.data
+          }
 
 
 
@@ -43,8 +49,11 @@ export function RQSuperHeroesPage() {
           <div>
                <h2>RQ Super Heroes Page</h2>
                {/* <button onClick={refetch}>Fetch Heroes</button> */}
-               {data?.data.map(hero => {
+               {/* {data?.data.map(hero => {
                     return <div key={hero.id}>{hero.name}</div>
+               })} */}
+               {data?.map(heroName => {
+                    return <div key={heroName}>{heroName}</div>
                })}
           </div>
      )
