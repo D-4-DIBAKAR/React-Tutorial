@@ -10,7 +10,8 @@ export function RQSuperHeroesPage() {
           // refetchOnMount: false,//default is true, or another value can be passed 'always',
           // refetchOnReconnect: false,//default is true, or another value can be passed 'always',
           // refetchOnWindowFocus: false, //default is true, or another value can be passed 'always',
-          // refetchInterval: 1000,//default is 0, or another value can be passed 'always'
+          // refetchInterval: 1000,//default is false, or another value can be passed in miliseconds, //it stops fetching data when window is not in focus
+          // refetchIntervalInBackground: false, //default is false, or another value can be passed in miliseconds //it continue fetching data when window is not in focus
 
 
 
