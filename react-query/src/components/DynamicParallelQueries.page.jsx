@@ -2,7 +2,7 @@ import React from 'react'
 import { useQueries } from 'react-query'
 import axios from 'axios'
 
-const fetchSuperHero = (heroId) => axios.get('http://localhost:4000/superheroes')
+const fetchSuperHero = ({ queryKey }) => axios.get('http://localhost:4000/superheroes')
 // const fetchFriends = () => axios.get('http://localhost:4000/friends')
 function DynamicParallelQueriesPage({ heroIds }) {
      const queryResults = useQueries(heroIds.map(id => {
