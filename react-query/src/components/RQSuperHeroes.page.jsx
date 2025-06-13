@@ -39,7 +39,7 @@ export function RQSuperHeroesPage() {
 
           // const hero = { name, alterEgo };
           // mutate(hero);
-          // refetch();  
+          // refetch();
      }
      return (
           <div>

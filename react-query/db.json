@@ -19,6 +19,16 @@
       "id": "fdb3",
       "name": "The Flash",
       "alterEgo": "Barry Allen"
+    },
+    {
+      "id": "5eba",
+      "name": "Loki",
+      "alterEgo": " 1234"
+    },
+    {
+      "id": "d6d2",
+      "name": "Shazam",
+      "alterEgo": "Billy Batson"
     }
   ],
   "friends": [
