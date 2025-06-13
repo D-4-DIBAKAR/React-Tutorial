@@ -1,6 +1,9 @@
-import axios from "axios";
+// import axios from "axios";
+import { request } from "../../utils/axios-utils";
 import { useQuery, useMutation, useQueryClient } from "react-query";
-const fetchSuperHeroes = () => axios.get('http://localhost:4000/superheroes')
+const fetchSuperHeroes = () =>
+     request({ url: '/superheroes', method: 'GET' });
+
 export const useSuperHerosData = (onSuccess, onError) => {
      return useQuery('super-heroes', fetchSuperHeroes, {
           // cacheTime: 5000,
@@ -22,7 +25,8 @@ export const useSuperHerosData = (onSuccess, onError) => {
      })
 }
 
-const addSuperHero = (hero) => axios.post('http://localhost:4000/superheroes', hero)
+// const addSuperHero = (hero) => axios.post('http://localhost:4000/superheroes', hero)
+const addSuperHero = (hero) => request({ url: '/superheroes', method: 'POST', data: hero })
 export const useAddSuperHeroData = () => {
      {
           const queryClient = useQueryClient();
